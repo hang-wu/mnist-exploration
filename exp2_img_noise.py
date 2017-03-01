@@ -6,9 +6,11 @@ NUM_ROUNDS = 5
 pars = {'batch_size': 100, 'std': 0,
         'lr': .1, 'momentum': .5, 'weight_decay':.0,
         'label_noise': (None, None),
-        'has_dropout':1, 'has_bn':0
+        'has_dropout':1, 'has_bn':0,
+        'use_cuda':0
         }
 pars['train_loader'], pars['test_loader'] = get_loader(**pars)
+pars['cuda'] = 'use_cuda' in pars and pars['use_cuda'] and torch.cuda.is_available()
 
 res_dict ={
     "std":[],
