@@ -34,6 +34,8 @@ for i in range(NUM_ROUNDS):
              print(scheme)
              pars['has_bn'], pars['has_dropout'], pars['weight_decay'] = SCHEMES[scheme]
              model = Net(has_dropout= pars['has_dropout'], has_bn=pars['has_bn'])
+             if pars['cuda']:
+                 model.cuda()
              t_loss, t_err, _,_,_ = eval_net(model, 1, **pars)
              temp = [ i, scheme, std, np.mean(t_err), t_loss]
              res.loc[len(res)] = temp
@@ -57,6 +59,8 @@ for i in range(NUM_ROUNDS):
             print(scheme)
             pars['has_bn'], pars['has_dropout'], pars['weight_decay'] = SCHEMES[scheme]
             model = Net(has_dropout=pars['has_dropout'], has_bn=pars['has_bn'])
+            if pars['cuda']:
+                model.cuda()
             t_loss, t_err, _, _, _ = eval_net(model, 1, **pars)
             for j in range(10):
                 res2.loc[len(res2)] = [j, i, scheme, std, t_err[j], t_loss]

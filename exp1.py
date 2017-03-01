@@ -26,6 +26,8 @@ all_train_losses = []
 for i in range(NUM_ROUNDS):
     print("***********",i)
     model = Net(has_dropout= pars['has_dropout'], has_bn=pars['has_bn'])
+    if pars['cuda']:
+        model.cuda()
     i_loss, i_err, i_C, train_losses, _ = eval_net(model, 1, **pars)
     t_err += np.array(i_err) / NUM_ROUNDS
     t_loss += i_loss / NUM_ROUNDS
