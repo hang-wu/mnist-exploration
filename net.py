@@ -14,9 +14,6 @@ def eval_net(model, n_epochs = 1,**kwargs):
     def train(epoch):
         model.train()
         for batch_idx, (data, target) in enumerate(train_loader):
-            if 'cuda' in kwargs and kwargs['cuda']:
-                #GPU Training
-                data, target = data.cuda(), target.cuda()
             if 'std' in kwargs:
                 #Adding noises to images
                 data = add_gaussian_noise(data, 0, kwargs['std']/255)
@@ -26,7 +23,10 @@ def eval_net(model, n_epochs = 1,**kwargs):
             if 'label_noise' in kwargs and kwargs['label_noise'][0] == 'corrupt':
                 #Adding random corruption noise
                 target = random_corrupt_label(target, kwargs['label_noise'][1])
-
+            if 'cuda' in kwargs and kwargs['cuda']:
+                #GPU Training
+                data, target = data.cuda(), target.cuda()
+ 
             data, target = Variable(data), Variable(target)
             optimizer.zero_grad()
             output = model(data)
@@ -55,8 +55,8 @@ def eval_net(model, n_epochs = 1,**kwargs):
 
             pred = output.data.max(1)[1]  # get the index of the max log-probability
             correct += pred.eq(target.data).cpu().sum()
-            all_targets += target.data.numpy().ravel().tolist()
-            all_preds += pred.numpy().ravel().tolist()
+            all_targets += target.cpu().data.numpy().ravel().tolist()
+            all_preds += pred.cpu().numpy().ravel().tolist()
 
         C, test_err = class_report(all_targets, all_preds)
 

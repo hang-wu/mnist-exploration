@@ -14,8 +14,7 @@ def add_gaussian_noise(X_train, mean, std):
         return X_train
     else:
         noise = np.random.normal(loc=mean,scale=std,size = X_train.size())
-    X_train.add_(torch.Tensor(noise))
-
+        X_train.add_(torch.Tensor(noise))
     clipped_X = torch.clamp(X_train, min = 0., max = 1.)
     return clipped_X
 
