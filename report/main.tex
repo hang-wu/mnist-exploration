@@ -9,6 +9,7 @@
 
 \title{MNIST Exploration}
 \author{Hang Wu}
+\date{}
 \maketitle
 
 \section{Classifier on original data}
@@ -22,12 +23,12 @@ In this section, the neural network we are using has the following architecture:
     FullyConnected([50, 10])
 \end{verbatim}
 
-We use Stochastic Gradient Descent (SGD) to optimize  the network parameters, with learning rate = 0.01, momentum = 0.5, and zero weight decay. The batch size is set to 100 and we train the network with 1 epoch. The model is implemented in the recently released PyTorch and results are obtained by averaging 5 rounds.
+We use Stochastic Gradient Descent (SGD) to optimize  the network parameters, with learning rate = 0.01, momentum = 0.5, and zero weight decay. The batch size is set to 100 and we train the network with 1 epoch. The model is implemented in the recently released PyTorch\footnote{The only reason I chose PyTorch over Tensorflow or Theano, both of which I have experience with, is that PyTorch is newly released and I'd like to explore around.} and results are obtained by averaging 5 rounds.
 
 \subsection{Classification Result \& Discussions}
 \paragraph{What is your test set error rate?} -
 
-On the test set, the average negative log likelihood is 0.082 and the average classification error rate ( the percentage of wrongly classified samples) is 0.021.
+On the test set, the average negative log likelihood is 0.082 and the average classification error rate ( the percentage of wrongly classified samples) is 2.1\%.
 
 \paragraph{What is the test set error rate for each class? Are some classes more challenging than others to distinguish from each other? Why?} -
 
