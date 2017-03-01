@@ -8,8 +8,11 @@ SCHEMES = {'Naive':(0,0,0), 'BatchNorm':(1,0,0), 'DropOut':(0,1,0), 'WeightDecay
 
 pars = {'batch_size': 100,
         'lr': .1, 'momentum': .5,
-        'label_noise': ['permute', 0]
+        'label_noise': ['permute', 0],
+        'use_cuda':1
         }
+pars['cuda'] = 'use_cuda' in pars and pars['use_cuda'] and torch.cuda.is_available()
+
 pars['train_loader'], pars['test_loader'] = get_loader(**pars)
 
 res_dict = {'rounds':[], 'scheme':[], 'noise':[], 'test_loss':[], 'test_err':[]}

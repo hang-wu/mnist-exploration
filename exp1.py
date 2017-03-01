@@ -7,8 +7,12 @@ import pickle
 pars = {'batch_size': 100, 'std': 0,
         'lr': .1, 'momentum': .5, 'weight_decay':.0,
         'label_noise': (None, None),
-        'has_dropout':1, 'has_bn':0
+        'has_dropout':1, 'has_bn':0,
+        'use_cuda':1
         }
+
+pars['cuda'] = 'use_cuda' in pars and pars['use_cuda'] and torch.cuda.is_available()
+
 pars['train_loader'], pars['test_loader'] = get_loader(**pars)
 pars['has_bn'], pars['has_dropout'], pars['weight_decay'] = (1,1,0)
 

@@ -7,10 +7,11 @@ pars = {'batch_size': 100, 'std': 0,
         'lr': .1, 'momentum': .5, 'weight_decay':.0,
         'label_noise': (None, None),
         'has_dropout':1, 'has_bn':0,
-        'use_cuda':0
+        'use_cuda':1
         }
-pars['train_loader'], pars['test_loader'] = get_loader(**pars)
 pars['cuda'] = 'use_cuda' in pars and pars['use_cuda'] and torch.cuda.is_available()
+pars['train_loader'], pars['test_loader'] = get_loader(**pars)
+
 
 res_dict ={
     "std":[],
@@ -33,7 +34,7 @@ for i in range(NUM_ROUNDS):
              print(scheme)
              pars['has_bn'], pars['has_dropout'], pars['weight_decay'] = SCHEMES[scheme]
              model = Net(has_dropout= pars['has_dropout'], has_bn=pars['has_bn'])
-             t_loss, t_err, _ = eval_net(model, 1, **pars)
+             t_loss, t_err, _,_,_ = eval_net(model, 1, **pars)
              temp = [ i, scheme, std, np.mean(t_err), t_loss]
              res.loc[len(res)] = temp
 
