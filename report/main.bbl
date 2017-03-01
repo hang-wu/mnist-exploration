@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+
+\bibitem{duchi2011adaptive}
+John Duchi, Elad Hazan, and Yoram Singer.
+\newblock Adaptive subgradient methods for online learning and stochastic
+  optimization.
+\newblock {\em Journal of Machine Learning Research}, 12(Jul):2121--2159, 2011.
+
+\bibitem{gold2017training}
+Jacob Goldberger and Ben-Reuven Ehud.
+\newblock Training deep neural networks using a noise adaptation layer.
+\newblock {\em ICLR 2017}, 2017.
+
+\bibitem{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep learning}.
+\newblock MIT Press, 2016.
+
+\bibitem{kaur2015noise}
+Sukhjinder Kaur.
+\newblock Noise types and various removal techniques.
+\newblock {\em International Journal of Advanced Research in Electronics and
+  Communication Engineering (IJARECE)}, 4(2):226--230, 2015.
+
+\bibitem{kingma2014adam}
+Diederik Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{maaten2008visualizing}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using t-sne.
+\newblock {\em Journal of Machine Learning Research}, 9(Nov):2579--2605, 2008.
+
+\bibitem{1_olah_2017}
+Christopher Olah.
+\newblock Visualizing mnist: An exploration of dimensionality reduction -
+  colah's blog, 2017.
+
+\bibitem{reed2014training}
+Scott Reed, Honglak Lee, Dragomir Anguelov, Christian Szegedy, Dumitru Erhan,
+  and Andrew Rabinovich.
+\newblock Training deep neural networks on noisy labels with bootstrapping.
+\newblock {\em arXiv preprint arXiv:1412.6596}, 2014.
+
+\bibitem{settles2010active}
+Burr Settles.
+\newblock Active learning literature survey.
+\newblock {\em University of Wisconsin, Madison}, 52(55-66):11, 2010.
+
+\bibitem{srivastava2014dropout}
+Nitish Srivastava, Geoffrey~E Hinton, Alex Krizhevsky, Ilya Sutskever, and
+  Ruslan Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em Journal of Machine Learning Research}, 15(1):1929--1958, 2014.
+
+\bibitem{xiao2015learning}
+Tong Xiao, Tian Xia, Yi~Yang, Chang Huang, and Xiaogang Wang.
+\newblock Learning from massive noisy labeled data for image classification.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 2691--2699, 2015.
+
+\bibitem{zeiler2012adadelta}
+Matthew~D Zeiler.
+\newblock Adadelta: an adaptive learning rate method.
+\newblock {\em arXiv preprint arXiv:1212.5701}, 2012.
+
+\bibitem{zhang2016understanding}
+Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals.
+\newblock Understanding deep learning requires rethinking generalization.
+\newblock {\em arXiv preprint arXiv:1611.03530}, 2016.
+
+\end{thebibliography}
